@@ -1,0 +1,49 @@
+﻿@model Austumate.Models.CollegeModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="mt-5 mb-4">Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus.CampusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus.CampusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeMailbox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeMailbox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CollegeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

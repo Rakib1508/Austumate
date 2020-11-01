@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Austumate.Models.AdministratorModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mt-5 mb-4">Admin List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministratorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministratorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mailbox)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdministratorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdministratorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mailbox)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProfileID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProfileID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProfileID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Austumate.Models.AvatarModel>
+
+@{
+    ViewBag.Title = "UserAvatars";
+}
+
+<h2 class="mt-5 mb-4">User Avatars</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvatarImage)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile.FirstName)
+        </td>
+        <td>
+            <img src="@Url.Content(item.AvatarImage)" height="100" width="100" />
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Austumate.Models.CollegeModel>
+
+@{
+    ViewBag.Title = "Colleges";
+}
+
+<h2 class="mt-5 mb-4">College List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeMailbox)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollegeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Campus.CampusName)
+        </td>
+        <td>
+            <a href="mailto:@item.CollegeMailbox">@Html.DisplayFor(modelItem => item.CollegeMailbox)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+    </tr>
+}
+
+</table>

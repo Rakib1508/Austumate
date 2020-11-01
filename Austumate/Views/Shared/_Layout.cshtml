@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuStuMate - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <div class="container-fluid sticky-top main-navigation">
+        <nav class="container-fluid navbar navbar-expand-xl navbar-dark navigation-bar">
+            <a class="navbar-brand" href="Index">
+                <img src="~/Images/AuStuMate_Logo.png" alt="Site Logo" id="logo" />
+                AuStuMate
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 mr-3">
+                    <input class="form-control mr-sm-2" id="search-bar" type="search" placeholder="How can we help?">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                @Html.Partial("_LoginPartial")
+            </div>
+
+        </nav>
+
+
+
+    </div>
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-2 side-space">
+
+                <div class="container-fluid row justify-content-center ml-xl-5">
+                    <div class="container-fluid col-xl-2"></div>
+                    <div class="container-fluid col-xl-8">
+                        <nav class="nav flex-column sidenav">
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Settings", "Index", "Manage", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Colleges", "Index", "College", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Majors", "Index", "Major", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Courses", "Index", "Course", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Students", "Students", "Student", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Teachers", "Teachers", "Teacher", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Registrars", "Registrars", "Registrar", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("All users", "Users", "Profile", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Avatars", "UserAvatars", "Avatar", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Carousels", "UserCarousels", "Carousel", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Classes", "Index", "AssignCourse", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Enrolls", "StudentList", "EnrollStudent", new { area = "" }, new { @class = "nav-link" })</a>
+                            }
+                            @if (User.IsInRole("Registrar"))
+                            {
+                                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Settings", "Index", "Manage", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Colleges", "Colleges", "College", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Majors", "Majors", "Major", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Courses", "Courses", "Course", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Students", "Students", "Student", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Teachers", "Teachers", "Teacher", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Registrars", "Index", "Registrar", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Classes", "Index", "AssignCourse", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Enrolls", "StudentList", "EnrollStudent", new { area = "" }, new { @class = "nav-link" })</a>
+                            }
+                            @if (User.IsInRole("Teacher"))
+                            {
+                                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Settings", "Index", "Manage", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Colleges", "Colleges", "College", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Majors", "Majors", "Major", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Courses", "Courses", "Course", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Students", "Students", "Student", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Teachers", "Index", "Teacher", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Registrars", "Registrars", "Registrar", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Classes", "MyCourses", "AssignCourse", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Enrolls", "Namelist", "EnrollStudent", new { area = "" }, new { @class = "nav-link" })</a>
+                            }
+                            @if (User.IsInRole("Student"))
+                            {
+                                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Settings", "Index", "Manage", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Colleges", "Colleges", "College", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Majors", "Majors", "Major", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Courses", "Courses", "Course", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Students", "Index", "Student", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Teachers", "Teachers", "Teacher", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Registrars", "Registrars", "Registrar", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Classes", "AvailableCourses", "AssignCourse", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Enrolls", "Index", "EnrollStudent", new { area = "" }, new { @class = "nav-link" })</a>
+                            }
+                            @if (!Request.IsAuthenticated)
+                            {
+                                <a>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Colleges", "Colleges", "College", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Majors", "Majors", "Major", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Courses", "Courses", "Course", new { area = "" }, new { @class = "nav-link" })</a>
+                                <a>@Html.ActionLink("Teachers", "Teachers", "Teacher", new { area = "" }, new { @class = "nav-link" })</a>
+                            }
+                        </nav>
+                    </div>
+                    <div class="container-fluid col-xl-2"></div>
+                </div>
+            </div>
+            <div class="container-fluid col-xl-7 body-content">
+                @RenderBody()
+                <hr />
+            </div>
+
+            @if (User.IsInRole("Administrator") || User.IsInRole("Registrar"))
+            {
+                <div class="col-xl-3 side-space">
+                    <div class="list-group">
+                        <a href="~/AttendanceScore/Records" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Attendance Records</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View scores of Attendance per course of all Students, but you cannot modify!</p>
+                            <small>View Scores</small>
+                        </a>
+                        <a href="~/LabScore/Records" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Laboratory Records</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View Laboratory Performance Scores of all Students, but you cannot modify!</p>
+                            <small>View Scores</small>
+                        </a>
+                        <a href="~/HomeworkScore/Records" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Homework Records</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View Homework Performance Scores of all Students, but you cannot modify!</p>
+                            <small>View Scores</small>
+                        </a>
+                        <a href="~/FinalExamScore/Records" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Final Exam Records</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View Final Exam Performance Scores of all Students, but you cannot modify!</p>
+                            <small>View Scores</small>
+                        </a>
+                        <a href="~/Scoresheet/Resultbook" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">View Resultbook</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View Scoresheets of all Students according to courses taken, but you cannot modify!</p>
+                            <small>View Scores</small>
+                        </a>
+                    </div>
+                </div>
+            }
+            @if (User.IsInRole("Teacher"))
+            {
+                <div class="col-xl-3 side-space">
+                    <div class="list-group">
+                        <a href="~/AttendanceScore/Index" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Attendance Records</h5>
+                                <small>Read/Write</small>
+                            </div>
+                            <p class="mb-1">View and edit scores of Attendance per course of all Students, comment if necessary!</p>
+                            <small>Score my students</small>
+                        </a>
+                        <a href="~/LabScore/Index" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Laboratory Records</h5>
+                                <small>Read/Write</small>
+                            </div>
+                            <p class="mb-1">View and edit Laboratory Performance Scores of all Students, comment if necessary!</p>
+                            <small>Score my students</small>
+                        </a>
+                        <a href="~/HomeworkScore/Index" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Homework Records</h5>
+                                <small>Read/Write</small>
+                            </div>
+                            <p class="mb-1">View and edit Homework Performance Scores of all Students, comment if necessary!</p>
+                            <small>Score my students</small>
+                        </a>
+                        <a href="~/FinalExamScore/Index" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Final Exam Records</h5>
+                                <small>Read/Write</small>
+                            </div>
+                            <p class="mb-1">View and edit Final Exam Performance Scores of all Students, comment if necessary!</p>
+                            <small>Score my students</small>
+                        </a>
+                        <a href="~/Scoresheet/Index" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">View Resultbook</h5>
+                                <small>Read/Write</small>
+                            </div>
+                            <p class="mb-1">View and edit Scoresheets of all Students according to courses taken, comment if necessary!</p>
+                            <small>Score my students</small>
+                        </a>
+                    </div>
+                </div>
+            }
+            @if (User.IsInRole("Student"))
+            {
+                <div class="col-xl-3 side-space">
+                    <div class="list-group">
+                        <a href="~/Scoresheet/MyScoresheet" class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">View Personal Scores</h5>
+                                <small>Read-only</small>
+                            </div>
+                            <p class="mb-1">View personal Scoresheet according to courses taken, but you cannot modify!</p>
+                            <small>View my scoresheet</small>
+                        </a>
+                    </div>
+                </div>
+            }
+            @if (!Request.IsAuthenticated)
+            {
+                <div class="col-xl-3 side-space"></div>
+            }
+
+            <div class="container-fluid footer pt-5 pb-5">
+
+                <div class="row">
+
+                    <div class="col-xl-2"></div>
+                    <div class="col-xl-8">
+
+                        <div class="container-fluid">
+
+                            <div class="row">
+
+                                <div class="col-xl-3">
+                                    <h6 class="mb-4">Visit to keep up</h6>
+                                    <div class="mb-2">
+                                        <a href="https://www.facebook.com/rifat.rakib.1508">
+                                            <img src="~/Images/facebook.png" alt="Facebook page link" height="25" width="25" />
+                                            <span class="ml-3">Rifat Rakib</span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="https://twitter.com/RifatRakib1508">
+                                            <img src="~/Images/twitter.png" alt="Twitter link" height="25" width="25" />
+                                            <span class="ml-3">&#64;RifatRakib1508</span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="https://www.instagram.com/rakib_1508/">
+                                            <img src="~/Images/instagram.png" alt="Instagram link" height="25" width="25" />
+                                            <span class="ml-3">&#64;rakib_1508</span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="https://www.youtube.com/channel/UC0-gYb2BEhbmbAPeAjtUq4g/featured?view_as=subscriber">
+                                            <img src="~/Images/youtube.png" alt="YouTube link" height="25" width="25" />
+                                            <span class="ml-3">Rifat Rakib's Studio</span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="https://github.com/Rakib1508">
+                                            <img src="~/Images/github.png" alt="Github link" height="25" width="25" />
+                                            <span class="ml-3">Rifat Rakib</span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-2">
+                                        <a href="https://www.linkedin.com/in/md-abdur-rakib-8981a0162/">
+                                            <img src="~/Images/linkedin.png" alt="LinkedIn link" height="25" width="25" />
+                                            <span class="ml-3">Md Abdur Rakib</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3">
+                                    <h6 class="mb-4">Quick menu</h6>
+                                    <span>@Html.ActionLink("My Profile", "Index", "Profile", new { area = "" }, new { @class = "mb-2" })</span><br />
+                                    <span>@Html.ActionLink("Settings", "Index", "Manage", new { area = "" }, new { @class = "mb-2" })</span><br />
+                                    <span>@Html.ActionLink("Find a Teacher", "Teachers", "Teacher", new { area = "" }, new { @class = "mb-2" })</span><br />
+                                    <span>@Html.ActionLink("About AuStuMate", "About", "Home", new { area = "" }, new { @class = "mb-2" })</span><br />
+                                    <span>@Html.ActionLink("Contact AuStuMate Team", "Contact", "Home", new { area = "" }, new { @class = "mb-2" })</span><br />
+                                </div>
+
+                                <div class="col-xl-3">
+                                    <h6 class="mb-4">AuStuMate Team</h6>
+                                    <a class="mb-2" href="https://www.linkedin.com/in/md-abdur-rakib-8981a0162/"><span>&raquo;</span><span class="ml-4">Md Abdur Rakib</span></a><br />
+                                    <a class="mb-2" href="mailto:Rakib.1508@outlook.com"><span>&raquo;</span><span class="ml-4">Ridoy Rezwan</span></a><br />
+                                    <a class="mb-2" href="mailto:Rakib.1508@outlook.com"><span>&raquo;</span><span class="ml-4">Yasin Arafat</span></a><br />
+                                    <a class="mb-2" href="mailto:Rakib.1508@outlook.com"><span>&raquo;</span><span class="ml-4">Risul Islam Rasel</span></a><br />
+                                </div>
+
+                                <div class="col-xl-3">
+                                    <h6 class="mb-4">Contact owner</h6>
+                                    <address>
+                                        <strong>AuStuMate Manager</strong><br>
+                                        YangZhou University<br>
+                                        Yangzhou, CN 228500<br>
+                                        Phone: 130-1371-2718
+                                    </address>
+
+                                    <address>
+                                        <strong>Mailbox</strong><br>
+                                        <a href="mailto:Rakib.1508@outlook.com">Rakib.1508@outlook.com</a>
+                                    </address>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-xl-2"></div>
+
+                </div>
+
+            </div>
+
+            <div class="container-fluid footer">
+                <div class="container-fluid">
+                    <footer class="ml-6">
+                        <p>&copy; @DateTime.Now.Year | AuStuMate - Ultimate Student Manager</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

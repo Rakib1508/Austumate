@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Austumate.Models.CarouselModel>
+
+@{
+    ViewBag.Title = "UserCarousels";
+}
+
+<h2 class="mt-5 mb-4">User Carousels</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarouselImage)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile.FirstName)
+        </td>
+        <td>
+            <img src="@Url.Content(item.CarouselImage)" height="100" width="100" />
+        </td>
+    </tr>
+}
+
+</table>

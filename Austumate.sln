@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Austumate", "Austumate\Austumate.csproj", "{83BA6F0E-95C5-42D4-9DC7-E1DE8094C3B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AustumateDataLibrary", "AustumateDataLibrary\AustumateDataLibrary.csproj", "{8EBC2B37-0D5E-428F-AEF7-249D4C94F8BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83BA6F0E-95C5-42D4-9DC7-E1DE8094C3B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BA6F0E-95C5-42D4-9DC7-E1DE8094C3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BA6F0E-95C5-42D4-9DC7-E1DE8094C3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BA6F0E-95C5-42D4-9DC7-E1DE8094C3B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBC2B37-0D5E-428F-AEF7-249D4C94F8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBC2B37-0D5E-428F-AEF7-249D4C94F8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBC2B37-0D5E-428F-AEF7-249D4C94F8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBC2B37-0D5E-428F-AEF7-249D4C94F8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA3040F8-1740-4447-A68F-75CB4E80AFE9}
+	EndGlobalSection
+EndGlobal

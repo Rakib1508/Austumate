@@ -1,0 +1,73 @@
+﻿@model Austumate.Models.AssignCourseModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="mt-5 mb-4">Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher.TeacherID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher.TeacherID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendanceRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendanceRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LabRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LabRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeworkRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeworkRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalExamRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalExamRate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssignCourseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

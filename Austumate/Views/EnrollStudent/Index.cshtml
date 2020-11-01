@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<Austumate.Models.EnrollStudentModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mt-5 mb-4">My Courses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester.Session)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.StudentID == User.Identity.GetUserId())
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.TeacherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester.Session)
+                </td>
+            </tr>
+        }
+    }
+
+</table>

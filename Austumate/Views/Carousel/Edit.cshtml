@@ -1,0 +1,40 @@
+﻿@model Austumate.Models.CarouselModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="mt-5 mb-4">Change Carousel</h2>
+
+@using (Html.BeginForm("Edit", "Carousel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProfileID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarouselImage, htmlAttributes: new { @class = "control-label" })
+            <div class="col-md-10">
+                <input type="file" name="image" />
+                @Html.ValidationMessageFor(model => model.CarouselImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default nav-link" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

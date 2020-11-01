@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<Austumate.Models.AssignCourseModel>
+
+@{
+    ViewBag.Title = "MyCourses";
+}
+
+<h2 class="mt-5 mb-4">My Courses</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LabRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeworkRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalExamRate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.TeacherID == User.Identity.GetUserId())
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AttendanceRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LabRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HomeworkRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinalExamRate)
+                </td>
+            </tr>
+        }
+    }
+
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Austumate.Models.AssignCourseModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mt-5 mb-4">Active Courses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LabRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeworkRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalExamRate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttendanceRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LabRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeworkRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalExamRate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssignCourseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssignCourseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssignCourseID })
+        </td>
+    </tr>
+}
+
+</table>

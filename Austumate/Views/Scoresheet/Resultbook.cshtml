@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Austumate.Models.ScoresheetModel>
+
+@{
+    ViewBag.Title = "Resultbook";
+}
+
+<h2 class="mt-5 mb-4">Resultbook</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LabScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeworkScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalExamScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttendanceScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LabScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeworkScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalExamScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grade)
+        </td>
+    </tr>
+}
+
+</table>

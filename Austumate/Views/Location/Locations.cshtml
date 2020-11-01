@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Austumate.Models.LocationModel>
+
+@{
+    ViewBag.Title = "Locations";
+}
+
+<h2 class="mt-5 mb-4">Location List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationDetails)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Campus.CampusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationDetails)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model Austumate.Models.MajorModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="mt-5 mb-4">Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.College.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.College.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MajorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MajorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Requirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Requirements)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MajorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

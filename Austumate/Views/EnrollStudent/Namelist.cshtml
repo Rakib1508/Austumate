@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<Austumate.Models.EnrollStudentModel>
+
+@{
+    ViewBag.Title = "Namelist";
+}
+
+<h2 class="mt-5 mb-4">Namelist</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SemesterID)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.TeacherID == User.Identity.GetUserId())
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester.Session)
+                </td>
+            </tr>
+        }
+    }
+
+</table>

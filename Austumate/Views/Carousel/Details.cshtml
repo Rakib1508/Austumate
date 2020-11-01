@@ -1,0 +1,33 @@
+﻿@model Austumate.Models.CarouselModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="mt-5 mb-4">Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarouselImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarouselImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProfileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿@model Austumate.Models.LocationModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="mt-5 mb-4">Delete</h2>
+
+<h3 class="mb-3">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus.CampusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus.CampusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationDetails)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default nav-link" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

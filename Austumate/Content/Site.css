@@ -1,0 +1,219 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    background-color: #e5e5e5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.navigation-bar {
+    background-color: #333d4d;
+    margin: 0px auto 0px auto;
+}
+
+.main-navigation {
+    background-color: #333d4d;
+    margin: 0;
+}
+
+#login-form {
+    margin: 10px auto;
+    width: 50%;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #505050;
+    background-color: rgba(255,255,255,0.0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-control:hover, .form-control:focus {
+    border: none;
+    border-bottom: 2px solid #007bff;
+    background-color: rgba(255,255,255,0.25);
+    box-shadow: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#search-bar {
+    border: none;
+    width: 300px;
+    background-color: rgba(255,255,255,0.5);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label, #remember {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: rgba(0,0,0,0.5);
+}
+
+label:hover, #remember:hover, #remember:focus {
+    color: rgba(0,0,0,0.8);
+}
+
+#login-panel {
+    background-color: #c3c3c3;
+    margin: 0px 100px;
+}
+
+#up-arrow {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.side-space {
+    background-color: #909090;
+    color: #333d4d;
+    margin: 0;
+    padding-top: 15px;
+}
+
+.nav-link, .list-group-item {
+    color: #909090;
+    background-color: #333d4d;
+    border: none;
+    margin-bottom: 2px;
+}
+
+.nav-link:hover, .footer, .list-group-item:hover  {
+    color: #ffffff;
+    background-color: #333d4d;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+}
+
+.profile-links {
+    color: #333d4d;
+    font-weight: normal;
+}
+
+.bolds {
+    font-weight: bold;
+}
+
+.profile-links:hover {
+    text-decoration: underline;
+}
+
+.bolds:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.body-content .bg-left {
+    border-right: 1px dashed #909090;
+    padding: 20px;
+    text-align: justify;
+}
+
+.body-content .bg-right {
+    border-left: 1px dashed #909090;
+    padding: 20px;
+    text-align: justify;
+}
+
+.body-content .upper {
+    border-bottom: 1px dashed #909090;
+}
+
+.body-content .lower {
+    border-top: 1px dashed #909090;
+}
+
+.body-content .info:hover {
+    background-color: #909090;
+}
+
+.body-content .info .btn {
+    color: #333d4d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    box-shadow: none;
+}
+
+.body-content .info .btn:hover {
+    font-weight: bold;
+    color: #000000;
+}
+
+.body-content .gap {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.body-content .gap h2 {
+    color: #333d4d;
+    margin: 0px auto 20px auto;
+    justify-content: center;
+}
+
+.body-content .gap #contact-form input, .body-content .gap #contact-form textarea {
+    border: none;
+    border-bottom: 2px solid #505050;
+    background-color: rgba(255,255,255,0.0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.body-content .gap #contact-form input:hover,
+.body-content .gap #contact-form input:focus,
+.body-content .gap #contact-form textarea:hover,
+.body-content .gap #contact-form textarea:active {
+    border: none;
+    border-bottom: 2px solid #007bff;
+    background-color: rgba(255,255,255,0.25);
+    box-shadow: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer.ml-6 {
+    text-align: center;
+}
+
+.footer span .mb-2, .footer .mb-2 span  {
+    color: #909090;
+    vertical-align: middle;
+}
+
+.footer .mb-2:hover {
+    font-weight: bold;
+}
+
+address a {
+    color: #909090;
+}
+
+address a:hover {
+    font-weight: bold;
+    color: #909090;
+}
+
+button#Facebook {
+    background-color: #3b5998;
+    padding: 5px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+}

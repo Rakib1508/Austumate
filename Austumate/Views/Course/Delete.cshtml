@@ -1,0 +1,63 @@
+﻿@model Austumate.Models.CourseModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="mt-5 mb-4">Delete</h2>
+
+<h3 class="mb-3">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.College.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.College.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassHours)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default nav-link" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

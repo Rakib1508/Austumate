@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Austumate.Models.MajorModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mt-5 mb-4">Major List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MajorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MajorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.College.CollegeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Level)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MajorID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MajorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MajorID })
+        </td>
+    </tr>
+}
+
+</table>

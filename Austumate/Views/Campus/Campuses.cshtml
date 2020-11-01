@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Austumate.Models.CampusModel>
+
+@{
+    ViewBag.Title = "Campuses";
+}
+
+<h2 class="mt-5 mb-4">Campus List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CampusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+    </tr>
+}
+
+</table>

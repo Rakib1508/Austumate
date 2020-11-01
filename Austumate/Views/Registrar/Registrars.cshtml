@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Austumate.Models.RegistrarModel>
+
+@{
+    ViewBag.Title = "Registrars";
+}
+
+<h2 class="mt-5 mb-4">Registrar List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrarID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrarName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mailbox)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrarID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrarName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoinDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mailbox)
+            </td>
+        </tr>
+    }
+
+</table>
